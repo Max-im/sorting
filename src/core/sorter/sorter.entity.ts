@@ -1,8 +1,9 @@
 'use strict';
 
 import { IOutput } from "../../io/output/output.type";
+import { ISortable } from "./sorter.type";
 
-export abstract class Sorter {
+export abstract class Sorter implements ISortable {
     private output: IOutput;
     abstract compare(index: number): boolean;
     abstract move(index: number): void;
@@ -25,7 +26,7 @@ export abstract class Sorter {
         }
     }
 
-    print(): void {
+    getResult(): void {
         this.output.out();
     }
 }
