@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:build": "tsc -w",
-    "dev:run": "nodemon ./dist/index.js",
-    "dev": "concurrently npm:dev:*"
+    "dev:build": "tsc",
+    "dev:run": "node ./dist/index.js",
+    "dev": "npm run dev:build && npm run dev:run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/inquirer": "^8.2.0",
+    "@types/yargs": "^17.0.15",
     "concurrently": "^7.6.0",
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "inquirer": "^8.2.0",
     "yargs": "^17.6.2"
   }
 }
