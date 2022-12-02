@@ -2,5 +2,5 @@
 
 ## App for test velocity different sorting strategies
 
-The App should not be applied for real mesure porpose
+The App should not be applied for real measure purpose
 the main target is to apply arch
