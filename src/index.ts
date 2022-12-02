@@ -1,25 +1,30 @@
 'use strict';
 
 import { CliIO } from './io/cli/cli.io';
-import {Logger} from './core/logger/logger';
-const rootLogger = new Logger();
-
-
+import { Logger } from './core/logger/logger';
+import { Data } from './core/data/data.entity';
 // import { NumberBubbleSorter } from './core/bubbleSorter/numberBubbleSorter.entity';
 // import { NativeSorter } from './core/nativeSorter/NativeSorter.entity';
 
+const appLogger = new Logger();
+
 class App {
     async run() {
-        // const data = [1,8,5];
-        // const nativeSorter = new NativeSorter(data, this.getOutput());
-        // const customSorter = new NumberBubbleSorter([...data], this.getOutput());
-        const cli = new CliIO();
-        const data = await cli.input();
+        try {
+            appLogger.info('App start');
+            const cli = new CliIO();
+            const inputData = await cli.input();
+            appLogger.info('Receive CLI Data');
+            appLogger.info(inputData);
+            
+            const data = (new Data()).data(inputData.dataType);
+            appLogger.info('Generate Data');
+            appLogger.info(data);
 
-        rootLogger.info({one: 'two'});
-        rootLogger.warn('warn');
-        rootLogger.error('error');
-        
+        } catch(err: any) {
+            appLogger.error(err.message);
+        }
+
     }
 }
 

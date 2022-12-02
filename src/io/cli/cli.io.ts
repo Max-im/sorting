@@ -1,5 +1,6 @@
 // import yargs from 'yargs/yargs';
-import { dataType, IInputData, IIo, sorterStrategy } from "../io.type";
+import { dataType } from "../../core/data/data.type";
+import { IInputData, IIo, sorterStrategy } from "../io.type";
 import { CliService } from './cli.service';
 
 

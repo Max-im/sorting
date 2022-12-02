@@ -1,11 +1,11 @@
-export type dataType = 'string' | 'numbersCollection' | 'linkedList';
+import { dataType } from "../core/data/data.type";
 
 export type sorterStrategy = 'bubbleSorter' | 'nativeSorter';
 
 export interface IInputData {
-    dataType: dataType
-    sorterStrategy: sorterStrategy
-    secondSorterStrategy: sorterStrategy
+    dataType: dataType;
+    sorterStrategy: sorterStrategy;
+    secondSorterStrategy: sorterStrategy;
 }
 
 export interface IIo {
