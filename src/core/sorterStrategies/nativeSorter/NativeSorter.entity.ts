@@ -1,13 +1,15 @@
-import { IOutput } from "../../io/output/output.type";
-import { Sorter } from "../sorter/sorter.entity";
+'use strict';
+
+import { Sorter } from '../sorter/sorter.entity';
 
 export class NativeSorter extends Sorter {
     data: any;
 
-    constructor(data: any, output: IOutput) {
-        super(output)
+    constructor(data: any) {
+        super()
         this.data = data;
     }
+
     get length() {
         return this.data.length;
     }

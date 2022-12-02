@@ -8,7 +8,12 @@ export interface IInputData {
     secondSorterStrategy: sorterStrategy;
 }
 
+export interface IOutputData {
+    timing1: number;
+    timing2: number;
+}
+
 export interface IIo {
     input(): IInputData | Promise<IInputData>;
-    output(): void;
+    output(data: IOutputData): void;
 }

@@ -3,8 +3,9 @@
 import { CliIO } from './io/cli/cli.io';
 import { Logger } from './core/logger/logger';
 import { Data } from './core/data/data.entity';
-// import { NumberBubbleSorter } from './core/bubbleSorter/numberBubbleSorter.entity';
-// import { NativeSorter } from './core/nativeSorter/NativeSorter.entity';
+import { SortBridbe } from './core/sortBridge/sortBridbe.executer';
+import { NumberBubbleSorter } from './core/sorterStrategies/bubbleSorter/numberBubbleSorter.entity';
+import { NativeSorter } from './core/sorterStrategies/nativeSorter/NativeSorter.entity'; 
 
 const appLogger = new Logger();
 
@@ -21,6 +22,8 @@ class App {
             appLogger.info('Generate Data');
             appLogger.info(data);
 
+            const sorter = new SortBridbe(NumberBubbleSorter, NativeSorter, data, cli);
+            sorter.execute();
         } catch(err: any) {
             appLogger.error(err.message);
         }
